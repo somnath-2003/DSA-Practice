@@ -1,2 +1,2 @@
 # DSA-Practice
-Daily coding practice of Data Structures &amp; Algorithms. Includes LeetCode solutions, notes, and code snippets.
+Daily coding practice of Data Structures and Algorithms. Includes LeetCode solutions, notes, and code snippets.
