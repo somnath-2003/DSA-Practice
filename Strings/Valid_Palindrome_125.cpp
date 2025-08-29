@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution1 {
 public:
     bool isPalindrome(string s) {
         bool result=true;
@@ -26,13 +26,47 @@ public:
 
     }
 };
+
+
+class Solution2 {
+public:
+    bool isPalindrome(string s) {
+
+        //Two pointer approach
+
+        int left=0,right=s.length()-1;
+
+        while(left<right){
+            while(left<right && !isalnum(s[left])){
+                left++;
+            }
+            while(left<right && !isalnum(s[right]) ){
+                right--;
+            }
+            if(tolower(s[left])!=tolower(s[right])){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+
+    }
+};
 int main() {
-    Solution sol;
+    Solution1 sol;
+    Solution2 sol2;
     string input;
     cout << "Enter a string: ";
-    getline(cin, input);
-
+    cin>>input;
+    cout<<"using solution1"<<endl;
     if(sol.isPalindrome(input)) {
+        cout << "The string is a palindrome." << endl;
+    } else {
+        cout << "The string is NOT a palindrome." << endl;
+    }
+    cout<<"Using Solution 2 "<<endl;
+    if(sol2.isPalindrome(input)) {
         cout << "The string is a palindrome." << endl;
     } else {
         cout << "The string is NOT a palindrome." << endl;
